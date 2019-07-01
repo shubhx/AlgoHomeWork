@@ -1,0 +1,28 @@
+package com.Algorithms;
+
+import java.util.Arrays;
+
+
+public class FindMax {
+    public FindMax() {
+        super();
+    }
+
+    static void getMax(int array[]){
+        for(int i = 0; i<array.length-1; i++){
+            if(array[i] > array[i+1]){
+                array[i] = array[i] + array[i+1];
+                array[i+1] = array[i] - array[i+1];
+                array[i] = array[i] - array[i+1];
+                }             
+            }
+         //   System.out.println(Arrays.toString(array));  
+            System.out.println("Maximum value is ==> " + array[array.length-1]);
+        }
+
+    public static void main(String[] args) {
+        int a[] = {10,20,-41,25,47,03};
+        getMax(a);
+        
+    }
+}
