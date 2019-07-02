@@ -1,0 +1,30 @@
+package com.Algorithms.Bubble_Sort;
+
+import java.util.Arrays;
+
+public class FindSecondMax {
+    public FindSecondMax() {
+        super();
+    }
+    
+    static int getSecondMax(int array[]){
+        for(int j = 0; j<array.length; j++){
+        for(int i = 0; i<array.length-1-j; i++){
+            if(array[i] > array[i+1]){
+                array[i] = array[i] + array[i+1];
+                array[i+1] = array[i] - array[i+1];
+                array[i] = array[i] - array[i+1];
+                }
+            }           
+        }
+        System.out.println(Arrays.toString(array));      
+        int a  = array[array.length-2];
+        return a;
+    }
+    
+    public static void main(String[] args) {
+        int a[] = {10,20,-41,25,47,03,26};
+        int ab = getSecondMax(a);
+        System.out.println(ab);
+    }
+}
